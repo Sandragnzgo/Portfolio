@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+}
+
+.contact {
+  text-align: center;
+  position: fixed;
+  top: 20px;
+  width: 95%;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.text-info {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.carrusel {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrusel-items {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 30px 0;
+}
+
+.carrusel-item {
+  position: relative;
+  min-width: 400px;
+  max-width: 600px;
+  height: 500px;
+  outline: 2px solid black;
+  cursor: pointer;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carrusel-item .descripcion {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carrusel-item:hover .descripcion {
+  display: block;
+}
+
+/* Estilos básicos para la imagen y el contenedor */
+.container {
+  text-align: center;
+}
+
+.clickable-img {
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.clickable-img:hover {
+  opacity: 0.7;
+}
+
+/* El Modal (oculto por defecto) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content (la imagen) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption de la imagen (opcional) */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Botón de cierre */
+.close {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Media query para la resolución 1366x768 */
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+  .carrusel-item {
+    min-width: 200px;
+    max-width: 400px;
+    height: 300px;
+  }
+
+  .carrusel-item .descripcion {
+    font-size: 12px; /* Ajusta el tamaño del texto para resoluciones más pequeñas */
+    padding: 10px; /* Reduce el padding para adaptarlo al nuevo tamaño del texto */
+  }
+}
